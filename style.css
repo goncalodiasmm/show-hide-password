@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Space Grotesk', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --blue-900: hsl(225, 50%, 10%);
+  --blue-800: hsl(225, 60%, 20%);
+  --orange-100: hsl(45, 10%, 90%);
+}
+
+/* PROJECT */
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--blue-900);
+  color: var(--orange-100);
+}
+
+.input {
+  position: relative;
+  background-color: var(--blue-800);
+  padding: 1rem 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.input__lock {
+  z-index: 1;
+}
+
+.input__password {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  z-index: 1;
+  color: var(--orange-100);
+}
+
+.input__password::placeholder {
+  z-index: 1;
+  color: var(--orange-100);
+}
+
+.input__icon {
+  color: var(--blue-800);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.input__overlay {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--orange-100);
+  border-radius: 50%;
+  right: 0.5rem;
+  z-index: 0;
+  transition: 0.4s ease-in-out;
+}
+
+.overlay-full {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.25rem;
+  right: 0;
+}
+
+.overlay-full ~ .input__lock {
+  color: var(--blue-800);
+}
+
+.overlay-full ~ .input__password,
+.overlay-full ~ .input__password::placeholder {
+  color: var(--blue-800);
+}
+
+/* EXTRA INFORMATION */
+.project__info {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25rem;
+}
+
+.project__title {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.project__id {
+  background-color: var(--orange-100);
+  color: var(--blue-900);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: 700;
+  font-size: 0.75rem;
+  align-self: flex-start;
+}
+
+.attribution__info {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.attribution__link {
+  position: relative;
+  text-decoration: none;
+  color: var(--orange-100);
+  transition: 0.4 ease-in-out;
+}
+
+.attribution__link:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0.125rem;
+  display: block;
+  margin-top: 0.125rem;
+  background: var(--orange-100);
+  right: 0;
+  transition: width 0.4s ease-in-out;
+}
+
+.attribution__link:hover:after {
+  width: 100%;
+  left: 0;
+  background: var(--orange-100);
+}
