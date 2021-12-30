@@ -14,8 +14,9 @@
 /* PROJECT */
 body {
   height: 100vh;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--blue-900);
   color: var(--orange-100);
 }
